@@ -7,7 +7,7 @@
   overflow-y: hidden;
   position: relative;
   padding: 40px 0;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .timeline {
@@ -15,79 +15,204 @@
   align-items: center;
   position: relative;
   width: max-content;
+  padding-left: 50px; /* Start with some padding for the animation */
   margin: 0 auto;
 }
 
 .timeline-line {
   position: absolute;
-  top: 100%;
+  top: 50%;
+  left: 0;
+  height: 3px;
   width: 100%;
-  border-top: 3px solid #4fc3f7;
+  background: #4fc3f7;
   transform: translateY(-50%);
 }
 
 .timeline-item {
   position: relative;
-  min-width: 150px;
+  min-width: 250px; /* Give some more space for each item */
+  margin-right: 30px; /* Space out timeline items */
   z-index: 1;
 }
 
 .timeline-dot {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  will-change: transform, box-shadow; /* Verbesserung der Performance für Animationen */
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s ease;
+}
+
+.timeline-dot::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #4fc3f7;
+  transition: background-color 0.3s ease;
 }
 
 .timeline-content {
   position: absolute;
   top: 30px;
   left: 50%;
-  transform: translateX(-50%) scale(0.9);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  background: linear-gradient(45deg, #4fc3f7, #8c9eff);
-  padding: 15px;
+  transform: translateX(-50%);
+  background: #1c223b;
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 200px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 220px; /* Adjust width for better readability */
   opacity: 0;
-  visibility: visible;
-  z-index: 2; /* Höherer z-Index für die Karten */
-  overflow:auto;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* Disable mouse events when content is not visible */
+  z-index: 2;
+}
+
+.timeline-item:hover .timeline-dot,
+.timeline-item:focus .timeline-dot {
+  background-color: #4fc3f7;
+}
+
+.timeline-item:hover .timeline-dot::after,
+.timeline-item:focus .timeline-dot::after {
+  background-color: #fff;
 }
 
 .timeline-item:hover .timeline-content,
-.timeline-item:focus-within .timeline-content {
-  visibility: visible;
+.timeline-item:focus .timeline-content {
   opacity: 1;
-  transform: translateX(-50%) scale(1);
+  pointer-events: auto; /* Enable mouse events when content is visible */
+  transform: translateX(-50%) translateY(-10px); /* Slightly raise the content */
 }
 
-/* Bestehende Stile ... */
-
-/* Anpassungen für mittelgroße Bildschirme */
-@media screen and (max-width: 768px) {
-  .timeline-dot {
-    width: 20px;
-    height: 20px;
-  }
-
+/* Responsive Design Adjustments */
+@media (max-width: 1024px) {
   .timeline-content {
-    width: 90%; /* Breitere Karten auf mittelgroßen Bildschirmen */
-    font-size: 0.9rem;
+    width: 180px; /* Adjust width for tablet devices */
   }
 }
 
-/* Anpassungen für kleine Bildschirme */
-@media screen and (max-width: 480px) {
-  .timeline-dot {
-    width: 15px;
-    height: 15px;
+@media (max-width: 768px) {
+  .roadmap-container {
+    height: auto; /* Adjust height for mobile devices */
+    padding: 20px 0;
   }
 
-  .timeline-content {
-    width: 100%; /* Vollbreite Karten auf kleinen Bildschirmen */
-    font-size: 0.8rem;
+  .timeline {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0; /* Remove padding on mobile */
+  }
+
+  .timeline-item {
+    min-width: 0;
+    margin-right: 0;
+    margin-bottom: 30px; /* Space out timeline items vertically on mobile */
+  }
+
+  .timeline-dot {
     left: 0;
-    transform: translateY(30px); /* Anpassung der Position */
-    padding: 10px;
+    transform: translate(0, -50%);
+  }
+
+  .timeline-content {
+    top: 50px;
+    left: 30px; /* Align content to the dot on mobile */
+    transform: translateX(0) translateY(0);
+    width: calc(100% - 60px); /* Full width minus padding on mobile */
   }
 }
+
+/* Keyframes for the line animation */
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.timeline-line {
+  animation: slideIn 2s ease-out forwards;
+
+}
+
+  .timeline-item:nth-child(1) .timeline-dot,
+  .timeline-item:nth-child(1) .timeline-content {
+    animation: popIn 0.5s ease 0.5s forwards;
+  }
+
+  .timeline-item:nth-child(2) .timeline-dot,
+  .timeline-item:nth-child(2) .timeline-content {
+    animation: popIn 0.5s ease 1s forwards;
+  }
+
+  .timeline-item:nth-child(3) .timeline-dot,
+  .timeline-item:nth-child(3) .timeline-content {
+    animation: popIn 0.5s ease 1.5s forwards;
+  }
+
+  .timeline-item:nth-child(4) .timeline-dot,
+  .timeline-item:nth-child(4) .timeline-content {
+    animation: popIn 0.5s ease 2s forwards;
+  }
+
+  .timeline-item:nth-child(5) .timeline-dot,
+  .timeline-item:nth-child(5) .timeline-content {
+    animation: popIn 0.5s ease 2.5s forwards;
+  }
+
+  .timeline-item:nth-child(6) .timeline-dot,
+  .timeline-item:nth-child(6) .timeline-content {
+    animation: popIn 0.5s ease 3s forwards;
+  }
+
+  .timeline-item:nth-child(7) .timeline-dot,
+  .timeline-item:nth-child(7) .timeline-content {
+    animation: popIn 0.5s ease 3.5s forwards;
+  }
+
+  /* ...add as many as you have timeline items */
+
+  /* Custom scrollbar for the roadmap container */
+  .roadmap-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .roadmap-container::-webkit-scrollbar-track {
+    background: #0a0f1d;
+  }
+
+  .roadmap-container::-webkit-scrollbar-thumb {
+    background-color: #4fc3f7;
+    border-radius: 4px;
+  }
+
+  /* Hover effect for the entire timeline item for better UX */
+  .timeline-item:hover,
+  .timeline-item:focus {
+    outline: none; /* Remove the default focus outline */
+    transform: translateY(-3px); /* Lift the item on hover/focus */
+    transition: transform 0.3s ease;
+  }
+
+  /* Ensure the animated elements are not visible until the animation starts */
+  .timeline-dot,
+  .timeline-content {
+    visibility: hidden;
+  }
+
+  .timeline-dot.animated,
+  .timeline-content.animated {
+    visibility: visible;
+  }

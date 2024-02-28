@@ -10,32 +10,25 @@ function StarCitizenUpdates() {
     // ...weitere Patch-Notizen
   ];
 
-  const openModal = note => {
-    setSelectedNote(note);
-  };
-
-  const closeModal = () => {
-    setSelectedNote(null);
-  };
-
   return (
     <div className="sc-updates">
       <h2>Star Citizen Patch-Notizen</h2>
       <div className="sc-patch-notes">
-        {patchNotes.map(note => (
-          <div className="sc-card" key={note.version} onClick={() => openModal(note)}>
+        {patchNotes.map((note, index) => (
+          <div className="sc-card" key={note.version} onClick={() => setSelectedNote(note)} tabIndex={0} aria-describedby={`note-details-${index}`}>
             <h3>Version {note.version}</h3>
             <p>{note.notes}</p>
+            <button onClick={() => setSelectedNote(note)}>Mehr erfahren</button>
           </div>
         ))}
       </div>
 
       {selectedNote && (
-        <div className="sc-modal">
-          <div className="sc-modal-content">
-            <span className="sc-close-button" onClick={closeModal}>&times;</span>
-            <h3>Version {selectedNote.version}</h3>
-            <p>{selectedNote.fullText}</p>
+        <div className="sc-modal" onClick={() => setSelectedNote(null)} tabIndex={-1} role="dialog" aria-labelledby="modal-title" aria-modal="true">
+          <div className="sc-modal-content" onClick={e => e.stopPropagation()}>
+            <button className="sc-close-button" onClick={() => setSelectedNote(null)}>Schließen</button>
+            <h3 id="modal-title">Version {selectedNote.version}</h3>
+            <p id={`note-details-${patchNotes.findIndex(n => n.version === selectedNote.version)}`}>{selectedNote.fullText}</p>
           </div>
         </div>
       )}
@@ -44,4 +37,3 @@ function StarCitizenUpdates() {
 }
 
 export default StarCitizenUpdates;
-
