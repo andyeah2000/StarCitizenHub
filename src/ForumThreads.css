@@ -1,0 +1,31 @@
+.forum-threads {
+  padding: 20px;
+  background-color: #0a0f1d; /* Dunkler Hintergrund */
+}
+
+.thread-card {
+  background-color: #122340; /* Dunklere Karte */
+  color: #ccd6f6; /* Helle Schrift */
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.thread-card:hover {
+  transform: translateY(-5px); /* Leichtes Anheben beim Hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+.thread-card h3 {
+  color: #4fc3f7; /* Neonblaue Schrift */
+  margin-top: 0;
+}
+
+.thread-card p {
+  color: inherit; /* Erbt die Schriftfarbe */
+  margin: 5px 0;
+}
+

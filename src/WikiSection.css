@@ -1,0 +1,117 @@
+/* Wiki Container */
+.wiki-container {
+  background-color: #0a0f1d;
+  color: #ccd6f6;
+  padding: 40px;
+}
+
+/* Grid-Layout für das gesamte Wiki */
+.wiki-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 20px;
+}
+
+/* Überschriften und Suche */
+.wiki-heading {
+  color: #4fc3f7;
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+}
+
+.wiki-intro {
+  margin-bottom: 1em;
+  font-size: 1.2rem;
+}
+
+.wiki-search input[type="search"] {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  border: 2px solid #4fc3f7;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Button-Stil */
+.button {
+  background-color: #4fc3f7;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #3bb5e3;
+}
+
+/* Cards */
+.card {
+  background-color: #122340;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Sorgt dafür, dass das Bild nicht über die abgerundeten Ecken hinausragt */
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  color: #4fc3f7;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  color: #ccd6f6;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Anpassung für kleinere Bildschirme */
+@media (max-width: 992px) {
+  .wiki-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-article,
+  .wiki-category {
+    margin-bottom: 1em;
+  }
+}
+
+/* Stil für Featured Articles */
+.featured-article {
+  background-color: #0d1f2d; /* Etwas dunkler als die Hauptkarten für visuelle Trennung */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.featured-article h3 {
+  color: #4fc3f7;
+  margin-bottom: 10px;
+}
+
+.featured-article img {
+  width: 100%;
+  margin-bottom: 20px;
+  height: auto;
+  object-fit: cover;
+}

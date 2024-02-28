@@ -1,0 +1,42 @@
+.forum-search {
+  padding: 20px;
+  background-color: #0a0f1d; /* Dunkler Hintergrund */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forum-search form {
+  display: flex;
+  width: 100%;
+  max-width: 600px; /* Begrenzung der Suchleistenbreite */
+}
+
+.forum-search input[type="text"] {
+  flex-grow: 1; /* Ermöglicht es dem Eingabefeld, den verfügbaren Raum auszufüllen */
+  padding: 10px 15px;
+  border: 1px solid #4fc3f7; /* Neonblauer Rand */
+  border-radius: 5px 0 0 5px; /* Abgerundete Ecken auf der linken Seite */
+  background-color: #122340; /* Dunklere Farbe für das Eingabefeld */
+  color: #ccd6f6; /* Helle Schrift */
+  transition: border-color 0.3s ease;
+}
+
+.forum-search input[type="text"]:focus {
+  outline: none;
+  border-color: #3bb5e3; /* Farbänderung beim Fokussieren */
+}
+
+.forum-search button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #4fc3f7; /* Neonblauer Hintergrund */
+  color: #0a0f1d; /* Dunkle Schrift */
+  border-radius: 0 5px 5px 0; /* Abgerundete Ecken auf der rechten Seite */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.forum-search button:hover {
+  background-color: #3bb5e3; /* Hellerer Blauton beim Hover */
+}

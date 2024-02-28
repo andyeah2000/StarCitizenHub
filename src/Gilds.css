@@ -1,0 +1,65 @@
+/* ProfilesPage.css - Dynamische Vergrößerung der Karten mit zusätzlichem Inhalt */
+
+/* Grundlegende Stil-Setzung */
+.profile-overview {
+  background-color: #0a0f1d; /* Dunkler Hintergrund */
+  color: #ccd6f6; /* Helle Schrift */
+  padding: 20px;
+  position: relative; /* Wichtig für die absolute Positionierung der Karten */
+}
+
+/* Profilkarten */
+.profile-card {
+  background-color: #122340; /* Dunkler Hintergrund für Karten */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Schatten für Karten */
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Sanfte Übergangsanimation */
+  cursor: pointer; /* Cursor als Hinweis für Klickbarkeit */
+  position: relative; /* Notwendig für die korrekte Anwendung von transform */
+  z-index: 1; /* Standard-z-index */
+}
+
+.profile-card img {
+  width: 100%;
+  height: 180px; /* Feste Höhe für Bilder */
+  object-fit: cover; /* Sorgt dafür, dass Bilder gut passen */
+}
+
+.profile-card .card-body {
+  padding: 15px; /* Innenabstand der Karte */
+}
+
+.profile-card .card-footer {
+  background-color: #0a0f1d; /* Dunkler Hintergrund für Fußzeile */
+  color: #4fc3f7; /* Leuchtende Schriftfarbe für Fußzeile */
+  text-align: center; /* Zentrierte Textausrichtung */
+}
+
+/* Animation für fokussierte Karte */
+.profile-card.focused {
+  transform: scale(1.5); /* Vergrößerungsfaktor */
+  z-index: 100; /* Stellt sicher, dass die Karte über anderen liegt */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8); /* Verstärkter Schatten für Fokus */
+}
+
+/* Versteckter zusätzlicher Inhalt */
+.profile-card .extra-content {
+  display: none; /* Standardmäßig versteckt */
+  padding: 10px; /* Innenabstand */
+}
+
+/* Zeige zusätzlichen Inhalt, wenn die Karte fokussiert ist */
+.profile-card.focused .extra-content {
+  display: block; /* Wird sichtbar, wenn die Karte fokussiert ist */
+}
+
+/* Responsives Verhalten */
+@media (max-width: 768px) {
+  .profile-card.focused {
+    transform: scale(1.2); /* Geringere Skalierung auf kleineren Bildschirmen */
+  }
+}
+
+
+

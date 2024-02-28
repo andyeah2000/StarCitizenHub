@@ -1,0 +1,68 @@
+.forum-header {
+  background-color: #0a0f1d; /* Dunkler Hintergrund passend zu Ihrem Header */
+  color: #ccd6f6; /* Helle Schrift */
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #4fc3f7; /* Akzentlinie */
+}
+
+.forum-header h1 {
+  font-size: 2rem; /* Größere Schrift */
+  color: #4fc3f7; /* Neonblaue Schrift */
+  background: linear-gradient(45deg, #4fc3f7, #8c9eff); /* Farbverlauf */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.5s ease; /* Animation beim Hover */
+}
+
+.forum-header h1:hover {
+  transform: scale(1.05); /* Leichte Vergrößerung beim Hover */
+}
+
+.forum-nav {
+  display: flex;
+}
+
+.forum-nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.forum-nav ul li {
+  margin: 0 15px; /* Abstand zwischen den Navigationspunkten */
+}
+
+.forum-nav ul li a {
+  color: #ccd6f6; /* Helle Schrift für Navigationslinks */
+  text-decoration: none; /* Entfernt die Unterstreichung */
+  transition: color 0.3s ease; /* Sanfter Farbübergang */
+}
+
+.forum-nav ul li a:hover {
+  color: #3bb5e3; /* Farbwechsel beim Hover */
+}
+
+.user-interaction {
+  display: flex;
+  align-items: center;
+}
+
+.user-interaction button {
+  background: none;
+  border: 1px solid #4fc3f7; /* Neonblauer Rand */
+  color: #ccd6f6;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.user-interaction button:hover {
+  background-color: #4fc3f7; /* Hintergrundfarbe beim Hover */
+  color: #0a0f1d; /* Schriftfarbe beim Hover */
+}
+

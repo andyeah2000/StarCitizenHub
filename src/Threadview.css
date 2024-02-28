@@ -1,0 +1,62 @@
+.thread-view {
+  background-color: #0a0f1d; /* Dunkler Hintergrund passend zum Gesamtdesign */
+  color: #ccd6f6; /* Helle Schriftfarbe */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.thread-view h2 {
+  color: #4fc3f7; /* Neonblaue Schrift */
+  border-bottom: 2px solid #4fc3f7; /* Akzentlinie unter dem Titel */
+  padding-bottom: 10px;
+}
+
+.thread-view .post {
+  background-color: #122340; /* Dunklere Karte für Beiträge */
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.thread-view .post:first-of-type {
+  margin-top: 20px;
+}
+
+.thread-view .post h4 {
+  margin-top: 0;
+  color: #4fc3f7; /* Neonblauer Autorname */
+}
+
+.thread-view .reply-form {
+  margin-top: 20px;
+  background-color: #122340; /* Hintergrund für Antwortbereich */
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.thread-view .reply-form textarea {
+  width: 100%;
+  background-color: #0a0f1d; /* Dunkler Hintergrund für Textbereich */
+  color: #ccd6f6; /* Helle Schrift */
+  border: 1px solid #4fc3f7; /* Neonblauer Rand */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.thread-view .reply-form button {
+  background-color: #4fc3f7; /* Neonblauer Hintergrund für den Button */
+  color: #0a0f1d; /* Dunkle Schrift */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.thread-view .reply-form button:hover {
+  background-color: #3bb5e3; /* Hellerer Blauton beim Hover */
+}
+

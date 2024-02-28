@@ -1,0 +1,32 @@
+.forum-categorys {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  background-color: #0a0f1d; /* Dunkler Hintergrund passend zum Header */
+}
+
+.category-card {
+  background-color: #122340; /* Dunklere Karte */
+  color: #ccd6f6; /* Helle Schrift */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-5px); /* Leichtes Anheben beim Hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+.category-card h2 {
+  margin-top: 0;
+  color: #4fc3f7; /* Neonblaue Schrift */
+}
+
+.category-card p {
+  color: inherit; /* Erbt die Schriftfarbe */
+}
+

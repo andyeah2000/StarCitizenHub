@@ -1,0 +1,75 @@
+.video-carousel {
+    display: flex; /* Verwendet Flexbox für das Layout */
+    justify-content: center; /* Zentriert die Items horizontal */
+    align-items: center; /* Zentriert die Items vertikal */
+    padding: 20px;
+    background-color: #0a0f1d; /* Dunkler Hintergrund */
+    color: #ccd6f6; /* Helle Schrift */
+    border-radius: 15px; /* Runde Ecken */
+    position: relative; /* Erlaubt absolute Positionierung für Kinder */
+    overflow: hidden; /* Versteckt überlappende Inhalte */
+}
+
+/* ... Andere Stile bleiben gleich ... */
+
+.video-item {
+    /* Setzt eine Basisgröße für alle Videos */
+    width: 80%; /* Größe des Hauptvideos */
+    min-width: 60%; /* Verhindert Größenänderung bei Skalierung */
+    margin: 0 10px; /* Abstand zwischen den Videos */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: absolute; /* Absolute Positionierung innerhalb des Karussells */
+    left: 50%; /* Startet in der Mitte */
+    transform: translateX(-50%); /* Zentriert das Video */
+    z-index: 2; /* Stellt sicher, dass das Hauptvideo im Vordergrund ist */
+    border-radius: 15px;
+}
+
+.video-item:not(.active) {
+    /* Stil für nicht-aktive Videos */
+    width: 40%; /* Größe der kleineren Videos */
+    min-width: 20%; /* Verhindert Größenänderung bei Skalierung */
+    z-index: 1; /* Nicht-aktive Videos gehen in den Hintergrund */
+    opacity: 0.5; /* Nicht-aktive Videos sind durchscheinender */
+    position: static; /* Schaltet die absolute Positionierung aus */
+    transform: none; /* Entfernt die Transformation */
+    border-radius: 15px;
+}
+
+/* Pseudo-Klassen für die Positionierung der angrenzenden Videos */
+.video-item:nth-of-type(1):not(.active) {
+    /* Positioniert das erste angrenzende Video links */
+    transform: translateX(-100%);
+}
+
+.video-item:nth-of-type(3):not(.active) {
+    /* Positioniert das zweite angrenzende Video rechts */
+    transform: translateX(50%);
+}
+
+/* Entfernt die Buttons, da diese nicht mehr benötigt werden */
+.carousel-controls {
+    display: none;
+}
+
+/* Video-Elemente */
+.video-item video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Abgerundete Ecken für Videos */
+}
+
+/* Anpassungen für kleinere Bildschirme */
+@media (max-width: 768px) {
+    .video-item, .video-item.active {
+        width: 100%;
+        min-width: 100%;
+        position: static; /* Alle Videos werden untereinander gestapelt */
+        transform: none; /* Keine Transformation auf kleinen Bildschirmen */
+        z-index: auto;
+        margin: 10px 0; /* Vertikaler Abstand zwischen den Videos */
+    }
+}
+
+
+

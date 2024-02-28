@@ -1,0 +1,23 @@
+.post {
+  background-color: #122340; /* Dunklere Karte für Beiträge */
+  color: #ccd6f6; /* Helle Schrift */
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.post:hover {
+  background-color: #0a0f1d; /* Sichtbare Hervorhebung beim Hover */
+}
+
+.post h4 {
+  margin-top: 0;
+  color: #4fc3f7; /* Neonblauer Autorname */
+}
+
+.post p {
+  margin: 10px 0;
+}
+

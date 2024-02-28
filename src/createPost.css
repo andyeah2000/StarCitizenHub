@@ -1,0 +1,32 @@
+.create-post {
+  background-color: #122340; /* Dunkler Hintergrund für das Formular */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.create-post textarea {
+  width: 100%;
+  background-color: #0a0f1d; /* Noch dunklerer Hintergrund für das Textfeld */
+  color: #ccd6f6; /* Helle Schrift */
+  border: 1px solid #4fc3f7; /* Neonblauer Rand */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  resize: vertical; /* Ermöglicht vertikales Vergrößern/Verkleinern */
+}
+
+.create-post button {
+  background-color: #4fc3f7; /* Neonblauer Hintergrund */
+  color: #0a0f1d; /* Dunkle Schrift */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-post button:hover {
+  background-color: #3bb5e3; /* Hellerer Blauton beim Hover */
+}

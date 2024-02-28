@@ -1,0 +1,75 @@
+/* Header.css */
+
+.header {
+  background-color: #0a0f1d; /* Dunkler Hintergrund */
+  color: #ccd6f6; /* Helle Schrift */
+  border-bottom: 3px solid #4fc3f7; /* Akzentlinie */
+}
+
+.navbar-custom {
+  transition: background-color 0.5s ease; /* Sanfte Hintergrund-Farbanimation */
+}
+
+.navbar-custom .navbar-brand {
+  font-size: 1.8rem; /* Größere Schrift für die Marke */
+  color: #4fc3f7; /* Neonblaue Schrift */
+  background: linear-gradient(45deg, #4fc3f7, #8c9eff); /* Farbverlauf für das Logo */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.5s ease; /* Animation beim Hover */
+}
+
+.navbar-custom .navbar-brand:hover {
+  transform: scale(1.1); /* Vergrößert das Logo beim Hover */
+}
+
+.navbar-custom .navbar-toggler {
+  border-color: #4fc3f7; /* Anpassen der Farbe des Togglers */
+}
+
+.navbar-custom .nav-link {
+  margin: 0 10px; /* Abstand zwischen den Links */
+  transition: color 0.3s ease; /* Farbübergang für Links */
+}
+
+.navbar-custom .nav-link:hover {
+  color: #3bb5e3; /* Farbwechsel beim Hover */
+  text-decoration: none; /* Entfernt die Unterstreichung */
+}
+
+.navbar-custom .nav-link.active, .navbar-custom .nav-link:focus {
+  color: #ffffff; /* Hervorhebung des aktiven/fokussierten Links */
+}
+
+.navbar-custom .nav-item:not(:last-of-type) {
+  border-right: 1px solid #4fc3f7; /* Vertikale Trennlinien zwischen Nav-Items */
+  padding-right: 15px; /* Abstand neben der Trennlinie */
+}
+
+/* Dropdown-Menü-Stile */
+.navbar-custom .dropdown-menu {
+  background-color: #122340; /* Dunkler Hintergrund für Dropdown */
+  border: none; /* Entfernt die Standard-Border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Schatten für das Dropdown */
+}
+
+.navbar-custom .dropdown-item {
+  color: #ccd6f6; /* Helle Schrift für Dropdown-Items */
+  transition: background-color 0.3s ease; /* Übergang für Hintergrundfarbe */
+}
+
+.navbar-custom .dropdown-item:hover, 
+.navbar-custom .dropdown-item:focus {
+  color: #ffffff; /* Hellere Schrift beim Hover/Fokus */
+  background-color: #0a0f1d; /* Dunklerer Hintergrund beim Hover/Fokus */
+}
+
+/* Anpassung der Dropdown-Link-Padding */
+.navbar-custom .dropdown-item {
+  padding: 10px 20px; /* Vertikale und horizontale Innenabstände */
+}
+
+
+
+
+

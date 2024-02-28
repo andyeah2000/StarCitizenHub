@@ -1,0 +1,114 @@
+/* Hauptinhalt-Stil */
+.main-content {
+  background-color: #0a0f1d;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Zentriert Inhalte vertikal */
+  color: #ccd6f6; /* Standardtextfarbe auf Hellblau setzen */
+}
+
+/* Stil für den Video-Header */
+.hero-section {
+  width: 100%;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.hero-video {
+  width: 100%;
+  height: auto;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; /* Sorgt dafür, dass die Überlagerung die gesamte Breite einnimmt */
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ccd6f6;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Navbar-Brand Stil */
+.navbar-brand {
+  flex-grow: 1;
+  text-align: center; /* Zentriert das Logo */
+}
+
+/* Anpassung des Navigationsbereichs */
+.navbar-custom {
+  width: 100%;
+  justify-content: space-between; /* Verteilt Navigationslinks und Logo */
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.nav-link {
+  color: #ccd6f6;
+  margin: 0 15px; /* Gibt den Links Abstand */
+}
+
+/* Stil für Karten */
+.custom-card {
+  background-color: #122340;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+}
+
+/* Anpassungen für verschiedene Viewports */
+@media (max-width: 992px) {
+  .custom-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-card {
+    width: 100%;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center; /* Zentriert die Links, wenn sie untereinander angeordnet sind */
+  }
+}
+
+/* Hauptinhalt-Stil */
+.main-content {
+  background-color: #0a0f1d;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Zentriert Inhalte vertikal */
+  color: #ccd6f6; /* Standardtextfarbe auf Hellblau setzen */
+}
+
+/* Überschriften-Stil */
+.main-content h1, 
+.main-content h2, 
+.main-content h3, 
+.main-content h4, 
+.main-content h5, 
+.main-content h6 {
+  color: #4fc3f7; /* Neonblaue Farbe für Überschriften */
+}
+

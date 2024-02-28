@@ -1,0 +1,54 @@
+.sc-updates {
+  color: #ccd6f6; /* Helle Schrift, wie im Header */
+  text-align: center;
+}
+
+.sc-card {
+  background-color: #0a0f1d; /* Dunkler Hintergrund, wie im Header */
+  color: #ccd6f6; /* Helle Schrift */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Schatten, ähnlich wie im Dropdown-Menü */
+  border-bottom: 2px solid #4fc3f7; /* Akzentlinie, wie im Header */
+  margin: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.sc-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* Stärkerer Schatten beim Hover */
+}
+
+.sc-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sc-modal-content {
+  background-color: #122340; /* Dunkler Hintergrund, wie im Dropdown-Menü */
+  color: #ccd6f6; /* Helle Schrift */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Schatten, wie im Dropdown-Menü */
+}
+
+.sc-close-button {
+  float: right;
+  font-size: 30px;
+  color: #4fc3f7; /* Neonblaue Schrift */
+  cursor: pointer;
+}
+
+.sc-close-button:hover {
+  color: #3bb5e3; /* Farbwechsel beim Hover */
+}
